@@ -6,18 +6,125 @@
     <title>Globe Guess</title>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8739967053239545"
      crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+    :root{
+
+      background-color: black;
+    }
+       
+        
+        #globe-container{
+
+          z-index:9998;
+          background-color: black;
+          opacity:0.5 ;
+        }
+        
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    overflow-x:hidden;
+    overflow-y:hidden;
+}
+
+a, i {
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.container {
+    display: flex;
+    background-color: #272727;
+    padding: 1rem;
+    border: 5px solid black;
+    border-radius: 20px;
+    z-index: 9998;
+   
+    align-items: center;
+    align-self: center;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 25%;
+    z-index: 9999;
+}
+
+.list {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+}
+
+i {
+    font-size: 30px;
+    transition: opacity 0.3s ease-in-out;
+}
+
+i:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.list-item {
+    color: #fff;
+    padding: .5rem;
+    position: relative;
+}
+
+.list-item::after {
+    content: " ";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transition: all 0.6s ease;
+}
+
+.list-item:hover::after {
+    transform: scaleX(1);
+}
+.victory{
+
+  opacity: 0.8;
+
+}
+* {
+	border: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+#gloveViz{z-index: 8000;}
+        </style>
         <script src="//unpkg.com/globe.gl"></script>
 </head>
 <body>
+  
+  
+  
   <div id="globe-container">
       <div class="container">
+        <center><h1 style="color: whitesmoke;">Globe Guess</h1></center>
         <nav class="navbar">
-
             <i class="ri-apple-fill"></i>
             <ul class="list">
-                <h1 style="color: whitesmoke;">Globe Guess</h1>
-                <br>
                 <li class="list-item">
                     <a href="game/hexed-polygons/index.html">Random</a>
                 </li>
@@ -35,9 +142,8 @@
                 </li>
             </ul>
         </nav>
-
-      </div><div id="behindmenu"><div id="globeViz"></div></div> </div>
-
+       </div> </div></div>
+    <div id="globeViz"></div>
   </div>
   <script type="module">
     import * as THREE from '//unpkg.com/three/build/three.module.js';
